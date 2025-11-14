@@ -11,33 +11,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5P2N6NRL');</script>
 <!-- End Google Tag Manager -->
- <script>
-  // pushToParent = function to communicate with parent window
-function pushToParent(message) {
-    parent.postMessage(message, "https://www.ptglab.com/");
-}
-// buildEventHandlers = function to create event handlers for requested eventing
-function buildEventHandlers() {
-    
-/*The code within buildEventHandlers is an example of how we would then implement an Event Listener to the iFramed content, to communicate events.  This code isn't a requirement but is being included as an example of how the whole of the code will function.*/
-    let eventMessage;
-    let anchorTags = document.querySelectorAll("a");
-        for (anchor of anchorTags) {
-            anchor.addEventListener("click", function(e) {     
-                eventMessage = {
-                    'event' : 'link_click_pageflow',
-                    'click_url' : this.href,
-                    'click_text' : this.innerText,
-                    'click_page_location' : document.location.href
-                }
-                pushToParent(eventMessage);
-            });
-        }
-// Listen for DOMContentLoaded before adding listeners
-document.addEventListener("DOMContentLoaded", function () {
-    buildEventHandlers();
-});
- </script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
